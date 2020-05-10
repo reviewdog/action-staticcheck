@@ -7,6 +7,8 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+echo "RUNNER_TOOL_CACHE=${RUNNER_TOOL_CACHE}"
+
 if [ -n "${RUNNER_TOOL_CACHE}" ]; then
   # https://github.com/actions/toolkit/blob/83dd3ef0f1e5bc93c5ab7072e1edf1715a01ba9d/packages/tool-cache/src/tool-cache.ts#L547
   mkdir -p "${RUNNER_TOOL_CACHE}/action-staticcheck"
