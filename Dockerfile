@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine
+FROM golang:1.14
 
 ENV REVIEWDOG_VERSION=v0.10.0
 ENV TMPL_VERSION=v1.2.0
