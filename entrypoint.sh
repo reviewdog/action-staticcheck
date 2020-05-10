@@ -16,7 +16,7 @@ if [ -n "${RUNNER_TOOL_CACHE}" ]; then
   echo "XDG_CACHE_HOME=${XDG_CACHE_HOME}"
   echo "ls -a ${RUNNER_TOOL_CACHE}"
   ls -a "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
-  echo "ls -a "${XDG_CACHE_HOME}""
+  echo "ls -a ${XDG_CACHE_HOME}"
   ls -a "${XDG_CACHE_HOME}" # debug
 fi
 
@@ -34,5 +34,5 @@ staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
 echo "After:"
 echo "ls -a ${RUNNER_TOOL_CACHE}"
 ls -a "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
-echo "ls -a "${XDG_CACHE_HOME}""
+echo "ls -a ${XDG_CACHE_HOME}"
 ls -a "${XDG_CACHE_HOME}" # debug
