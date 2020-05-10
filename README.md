@@ -31,7 +31,7 @@ inputs:
     default: 'github-pr-check'
   filter_mode:
     description: |
-      Filtering for the reviewdog command [added,diff_context,file,nofilter].
+      Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
       Default is added.
     default: 'added'
   fail_on_error:
@@ -67,9 +67,10 @@ jobs:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
           reporter: github-pr-review
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
-          level: warning
+          # Report all results.
+          filter_mode: nofilter
+          # Exit with 1 when it find at least one finding.
+          fail_on_error: true
 ```
 
 ## Development
