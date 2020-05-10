@@ -1,29 +1,17 @@
-# action-template
+# action-staticcheck
 
-<!-- TODO: replace reviewdog/action-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-template?logo=github&sort=semver)](https://github.com/reviewdog/action-template/releases)
+[![Test](https://github.com/reviewdog/action-staticcheck/workflows/Test/badge.svg)](https://github.com/reviewdog/action-staticcheck/actions?query=workflow%3ATest)
+[![reviewdog](https://github.com/reviewdog/action-staticcheck/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-staticcheck/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/reviewdog/action-staticcheck/workflows/depup/badge.svg)](https://github.com/reviewdog/action-staticcheck/actions?query=workflow%3Adepup)
+[![release](https://github.com/reviewdog/action-staticcheck/workflows/release/badge.svg)](https://github.com/reviewdog/action-staticcheck/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-staticcheck?logo=github&sort=semver)](https://github.com/reviewdog/action-staticcheck/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
 ![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
 ![github-pr-check demo](https://user-images.githubusercontent.com/3797062/73163032-70829e00-4132-11ea-8481-f213a37db354.png)
 
-This is a template repository for [reviewdog](https://github.com/reviewdog/reviewdog) action with release automation.
-Click `Use this template` button to create your reviewdog action :dog:!
-
-If you want to create your own reviewdog action from scratch without using this
-template, please check and copy release automation flow.
-It's important to manage release workflow and sync reviewdog version for all
-reviewdog actions.
-
-This repo contains a sample action to run [misspell](https://github.com/client9/misspell).
-
 ## Input
 
-<!-- TODO: update -->
 ```yaml
 inputs:
   github_token:
@@ -49,9 +37,12 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Flags for staticcheck ###
+  target:
+    description: 'Target of staticcheck'
+    default: './...'
+  staticcheck_flags:
+    description: 'staticcheck flags'
     default: ''
 ```
 
@@ -68,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: reviewdog/action-template@v1
+      - uses: reviewdog/action-staticcheck@v1
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
