@@ -14,10 +14,10 @@ if [ -n "${RUNNER_TOOL_CACHE}" ]; then
   mkdir -p "${RUNNER_TOOL_CACHE}/action-staticcheck"
   export XDG_CACHE_HOME="${RUNNER_TOOL_CACHE}/action-staticcheck"
   echo "XDG_CACHE_HOME=${XDG_CACHE_HOME}"
-  echo "ls ${RUNNER_TOOL_CACHE}"
-  ls "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
-  echo "ls "${XDG_CACHE_HOME}""
-  ls "${XDG_CACHE_HOME}" # debug
+  echo "ls -a ${RUNNER_TOOL_CACHE}"
+  ls -a "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
+  echo "ls -a "${XDG_CACHE_HOME}""
+  ls -a "${XDG_CACHE_HOME}" # debug
 fi
 
 staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
@@ -32,7 +32,7 @@ staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
       ${INPUT_REVIEWDOG_FLAGS}
 
 echo "After:"
-echo "ls ${RUNNER_TOOL_CACHE}"
-ls "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
-echo "ls "${XDG_CACHE_HOME}""
-ls "${XDG_CACHE_HOME}" # debug
+echo "ls -a ${RUNNER_TOOL_CACHE}"
+ls -a "${RUNNER_TOOL_CACHE}/action-staticcheck" # debug
+echo "ls -a "${XDG_CACHE_HOME}""
+ls -a "${XDG_CACHE_HOME}" # debug
