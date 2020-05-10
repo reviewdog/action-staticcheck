@@ -7,7 +7,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-staticcheck ${INPUT_STATICCHECK_FLAGS} ${INPUT_TARGET:-.}  \
+staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
   | tmpl -f=jsonl /json.tmpl \
   | reviewdog \
       -efm="%f:%l:%c: %m" \
