@@ -5,6 +5,11 @@ import (
 	"regexp"
 )
 
+const (
+	First  byte = 1
+	Second      = 2
+)
+
 func unused() {
 	regexp.Compile(".+")
 
