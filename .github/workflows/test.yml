@@ -29,4 +29,4 @@ jobs:
           reporter: github-pr-review
           level: error
           workdir: ./testdata
-          reviewdog_flags: -filter-mode=file -fail-on-error
+          reviewdog_flags: -filter-mode=file
