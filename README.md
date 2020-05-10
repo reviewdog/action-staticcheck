@@ -49,15 +49,13 @@ inputs:
 ```
 
 ## Usage
-<!-- TODO: update. replace `template` with the linter name -->
 
 ```yaml
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: change `linter_name`.
-  linter_name:
-    name: runner / <linter-name>
+  staticcheck:
+    name: runner / staticcheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
