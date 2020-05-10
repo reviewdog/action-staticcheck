@@ -7,8 +7,10 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-staticcheck?logo=github&sort=semver)](https://github.com/reviewdog/action-staticcheck/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
-![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
-![github-pr-check demo](https://user-images.githubusercontent.com/3797062/73163032-70829e00-4132-11ea-8481-f213a37db354.png)
+This action runs [staticcheck](https://staticcheck.io/) with reviewdog on pull requests to improve code review experience.
+
+[![github-pr-review demo](https://user-images.githubusercontent.com/3797062/81496355-1a58f580-92f2-11ea-809b-7e61f863c147.png)](https://github.com/reviewdog/action-staticcheck/pull/1#discussion_r422620536)
+<sub>Link to the staticcheck check rule is available as well. e.g. [SA9004](https://staticcheck.io/docs/checks#SA9004)</sub>
 
 ## Input
 
