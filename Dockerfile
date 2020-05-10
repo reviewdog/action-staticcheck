@@ -3,8 +3,6 @@ FROM golang:1.14
 ENV REVIEWDOG_VERSION=v0.10.0
 ENV TMPL_VERSION=v1.2.0
 
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
-
 # hadolint ignore=DL3006
 RUN apk --no-cache add git
 
