@@ -1,6 +1,6 @@
 FROM golang:1.15
 
-ENV REVIEWDOG_VERSION=v0.10.2
+ENV REVIEWDOG_VERSION=v0.11.0
 ENV TMPL_VERSION=v1.2.0
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION} && \
