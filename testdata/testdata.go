@@ -13,7 +13,7 @@ const (
 func unused() {
 	regexp.Compile(".+")
 
-	if errors.New("abc") == errors.New("abc") {
-		// test SA4000
+	if errors.New("abcd") == errors.New("abcd") {
+		// Test SA4000
 	}
 }

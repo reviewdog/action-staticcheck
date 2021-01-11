@@ -1,6 +1,0 @@
-{{ range $_, $jl := . -}} 
-  {{ $jl.location.file }}:{{ $jl.location.line }}:{{ $jl.location.column }}:{{ sp -}}
-  {{ $jl.message }}{{ sp -}}
-  [{{ $jl.code }}](https://staticcheck.io/docs/checks#{{ $jl.code }})
-  {{- nl -}}
-{{- end -}}
