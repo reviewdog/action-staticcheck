@@ -8,9 +8,9 @@ fi
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
-  | tmpl -f=jsonl /json.tmpl \
+  | jq -f /to-rdjsonl.jq -c \
   | reviewdog \
-      -efm="%f:%l:%c: %m" \
+      -f="rdjsonl" \
       -name="staticcheck" \
       -reporter="${INPUT_REPORTER:-github-pr-review}" \
       -filter-mode="${INPUT_FILTER_MODE}" \

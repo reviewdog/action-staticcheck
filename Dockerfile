@@ -1,14 +1,13 @@
 FROM golang:1.15
 
 ENV REVIEWDOG_VERSION=v0.11.0
-ENV TMPL_VERSION=v1.2.0
 
-RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION} && \
-  wget -O - -q https://raw.githubusercontent.com/haya14busa/tmpl/master/install.sh| sh -s -- -b /usr/local/bin/ ${TMPL_VERSION}
+RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
+RUN apk add --no-cache jq
 
 RUN go get honnef.co/go/tools/cmd/staticcheck
 
 COPY entrypoint.sh /entrypoint.sh
-COPY json.tmpl /json.tmpl
+COPY to-rdjsonl.jq /to-rdjsonl.jq
 
 ENTRYPOINT ["/entrypoint.sh"]
