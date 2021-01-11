@@ -14,6 +14,6 @@ func unused() {
 	regexp.Compile(".+")
 
 	if errors.New("abc") == errors.New("abc") {
-		// test SA4000
+		// Test SA4000
 	}
 }
