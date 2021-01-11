@@ -13,6 +13,6 @@
         column: .location.column
       }
     }
- },
-  severity: .severity|ascii_upcase
+  },
+  severity: ((.level|ascii_upcase|select(match("ERROR|WARNING|INFO")))//null)
 }
