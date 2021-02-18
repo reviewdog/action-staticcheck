@@ -36,8 +36,21 @@ inputs:
     description: 'staticcheck flags'
     default: ''
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'composite'
+  steps:
+    - run: $GITHUB_ACTION_PATH/script.sh
+      shell: bash
+      env:
+        REVIEWDOG_VERSION: 'v0.11.0'
+        INPUT_GITHUB_TOKEN: '${{ inputs.github_token }}'
+        INPUT_WORKDIR: '${{ inputs.workdir }}'
+        INPUT_LEVEL: '${{ inputs.level }}'
+        INPUT_FAIL_ON_ERROR: '${{ inputs.fail_on_error }}'
+        INPUT_FILTER_MODE: '${{ inputs.filter_mode }}'
+        INPUT_REPORTER: '${{ inputs.reporter }}'
+        INPUT_REVIEWDOG_FLAGS: '${{ inputs.reviewdog_flags }}'
+        INPUT_TARGET: '${{ inputs.target }}'
+        INPUT_STATICCHECK_FLAGS: '${{ inputs.staticcheck_flags }}'
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 branding:
