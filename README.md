@@ -61,7 +61,16 @@ jobs:
     name: runner / staticcheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # checkout code
+      - uses: actions/checkout@v3
+
+      # If you want to use the specific version of Go,
+      # you need actions/setup-go@v3 action.
+      - uses: actions/setup-go@v3
+        with:
+          go-version: "1.18"
+
+      # run staticcheck
       - uses: reviewdog/action-staticcheck@v1
         with:
           github_token: ${{ secrets.github_token }}
