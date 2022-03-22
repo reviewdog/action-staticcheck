@@ -66,7 +66,7 @@ jobs:
 
       # If you want to use the specific version of Go,
       # you need actions/setup-go@v3 action.
-      - use: actions/setup-go@v3
+      - uses: actions/setup-go@v3
         with:
           go-version: "1.18"
 
