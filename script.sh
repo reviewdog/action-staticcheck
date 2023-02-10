@@ -16,6 +16,7 @@ curl -sfL  "https://github.com/dominikh/go-tools/releases/latest/download/static
 echo '::endgroup::'
 
 
+echo '::group:: Running staticcheck with reviewdog 🐶 ...'
 staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
   | jq -f "${GITHUB_ACTION_PATH}/to-rdjsonl.jq" -c | \
    reviewdog \
@@ -26,3 +27,8 @@ staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
       ${INPUT_REVIEWDOG_FLAGS}
+
+exit_code=$?
+echo '::endgroup::'
+
+exit $exit_code
