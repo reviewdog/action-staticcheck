@@ -62,13 +62,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # If you want to use the specific version of Go,
-      # you need actions/setup-go@v3 action.
-      - uses: actions/setup-go@v3
+      # you need actions/setup-go@v4 action.
+      - uses: actions/setup-go@v4
         with:
-          go-version: "1.18"
+          go-version: "1.21"
 
       # run staticcheck
       - uses: reviewdog/action-staticcheck@v1
