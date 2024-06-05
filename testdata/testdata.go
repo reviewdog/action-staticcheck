@@ -16,4 +16,6 @@ func unused() {
 	if errors.New("abcd") == errors.New("abcd") {
 		// Test SA4000
 	}
+
+	regexp.Compile(".*")
 }
