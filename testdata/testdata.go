@@ -2,6 +2,7 @@ package testdata
 
 import (
 	"errors"
+	"fmt"
 	"regexp"
 )
 
@@ -15,5 +16,14 @@ func unused() {
 
 	if errors.New("abcd") == errors.New("abcd") {
 		// Test SA4000
+	}
+
+	regexp.Compile(".\\")
+
+	s := []string{}
+	if s != nil {
+		for _, x := range s {
+			fmt.Println(x)
+		}
 	}
 }
