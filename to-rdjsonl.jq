@@ -11,8 +11,28 @@
       start: {
         line: .location.line,
         column: .location.column
+      },
+      end: {
+        line: .end.line,
+        column: .end.column
       }
     }
   },
+  related_locations: (.related // {}) | map({
+    message: .message,
+    location: {
+      path: .location.file,
+      range: {
+        start: {
+          line: .location.line,
+          column: .location.column
+        },
+        end: {
+          line: .end.line,
+          column: .end.column
+        }
+      }
+    }
+  }),
   severity: ((.severity|ascii_upcase|select(match("ERROR|WARNING|INFO")))//null)
 }
