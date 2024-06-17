@@ -38,10 +38,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - uses: reviewdog/action-setup@v1
+      with:
+        reviewdog_version: nightly
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
-        REVIEWDOG_VERSION: 'v0.17.5'
         INPUT_GITHUB_TOKEN: '${{ inputs.github_token }}'
         INPUT_WORKDIR: '${{ inputs.workdir }}'
         INPUT_LEVEL: '${{ inputs.level }}'
