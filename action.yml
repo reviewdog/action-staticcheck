@@ -40,7 +40,7 @@ runs:
   steps:
     - uses: reviewdog/action-setup@v1
       with:
-        reviewdog_version: nightly
+        reviewdog_version: v0.18.0
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
