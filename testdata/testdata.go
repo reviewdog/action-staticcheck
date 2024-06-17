@@ -21,7 +21,7 @@ func unused() {
 	regexp.Compile(".\\")
 
 	s := []string{}
-	if s != nil {
+	if s != nil { // test
 		for _, x := range s {
 			fmt.Println(x)
 		}
