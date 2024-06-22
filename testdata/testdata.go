@@ -14,6 +14,8 @@ const (
 func unused() {
 	regexp.Compile(".+")
 
+	nonNilVar := []int{}
+
 	if errors.New("abcd") == errors.New("abcd") {
 		// Test SA4000
 	}
@@ -21,9 +23,13 @@ func unused() {
 	regexp.Compile(".\\")
 
 	s := []string{}
-	if s != nil {
+	if s != nil { // test
 		for _, x := range s {
 			fmt.Println(x)
 		}
+	}
+
+	if nonNilVar != nil {
+		fmt.Println(nonNilVar)
 	}
 }
