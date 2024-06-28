@@ -4,6 +4,7 @@ on:
     - cron:  '14 14 * * *' # Runs at 14:14 UTC every day
   repository_dispatch:
     types: [depup]
+  workflow_dispatch:
 
 jobs:
   reviewdog:
@@ -14,7 +15,7 @@ jobs:
         id: depup
         with:
           file: action.yml
-          version_name: REVIEWDOG_VERSION
+          version_name: reviewdog_version
           repo: reviewdog/reviewdog
 
       - name: Create Pull Request
