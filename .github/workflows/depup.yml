@@ -14,7 +14,7 @@ jobs:
         id: depup
         with:
           file: action.yml
-          version_name: REVIEWDOG_VERSION
+          version_name: reviewdog_version
           repo: reviewdog/reviewdog
 
       - name: Create Pull Request
