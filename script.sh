@@ -15,7 +15,7 @@ echo '::endgroup::'
 
 
 echo '::group:: Running staticcheck with reviewdog 🐶 ...'
-staticcheck "${INPUT_STATICCHECK_FLAGS}" -f=json "${INPUT_TARGET:-.}" \
+staticcheck ${INPUT_STATICCHECK_FLAGS} -f=json ${INPUT_TARGET:-.} \
   | jq -f "${GITHUB_ACTION_PATH}/to-rdjsonl.jq" -c | \
    reviewdog \
       -f="rdjsonl" \
@@ -24,7 +24,7 @@ staticcheck "${INPUT_STATICCHECK_FLAGS}" -f=json "${INPUT_TARGET:-.}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
-      "${INPUT_REVIEWDOG_FLAGS}"
+      ${INPUT_REVIEWDOG_FLAGS}
 
 exit_code=$?
 echo '::endgroup::'
