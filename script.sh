@@ -7,7 +7,7 @@ TEMP_PATH="$(mktemp -d)"
 PATH="${TEMP_PATH}:$PATH"
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-STATICCHECK_VERSION="2024.1.1"
+STATICCHECK_VERSION="2025.1"
 echo '::group:: Installing staticcheck ... https://staticcheck.io'
 curl -sfL  "https://github.com/dominikh/go-tools/releases/download/${STATICCHECK_VERSION}/staticcheck_linux_amd64.tar.gz" | tar -xvz -C "${TEMP_PATH}" --strip-components=1
 staticcheck --version
