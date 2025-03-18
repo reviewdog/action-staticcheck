@@ -17,7 +17,7 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: "github-pr-review"
           if_false: "github-check"
-      - uses: reviewdog/action-shellcheck@8aaabfceb25472d0549b29f0a96eebf31b4d0503 # v1.29.1
+      - uses: reviewdog/action-shellcheck@57079a832290a049f49cee90984b072c870fb7d4 # v1.29.3
         with:
           github_token: ${{ secrets.github_token }}
           reporter: ${{ steps.reporter.outputs.value }}
