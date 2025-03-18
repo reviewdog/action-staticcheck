@@ -70,16 +70,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout code
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       # If you want to use the specific version of Go,
       # you need actions/setup-go@v4 action.
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
         with:
           go-version: "1.21"
 
       # run staticcheck
-      - uses: reviewdog/action-staticcheck@v1
+      - uses: reviewdog/action-staticcheck@73cfd0daa6fdbba9a858dcb0f62844012fa8317d # v1.27.0
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
