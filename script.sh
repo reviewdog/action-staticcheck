@@ -7,7 +7,7 @@ TEMP_PATH="$(mktemp -d)"
 PATH="${TEMP_PATH}:$PATH"
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-STATICCHECK_VERSION="2026.1"
+STATICCHECK_VERSION="2026.2"
 echo '::group:: Installing staticcheck ... https://staticcheck.io'
 if [ "${INPUT_USE_GO_INSTALL}" = "true" ]; then
   echo "Building staticcheck from source using go install..."
