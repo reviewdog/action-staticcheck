@@ -51,7 +51,7 @@ runs:
   steps:
     - uses: reviewdog/action-setup@v1.5.0
       with:
-        reviewdog_version: v0.21.2
+        reviewdog_version: v0.21.3
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
