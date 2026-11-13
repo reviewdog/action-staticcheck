@@ -20,6 +20,7 @@ workflows:
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-go@v7.0.0'
+        - 'reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f'
         - 'reviewdog/action-setup@v1.5.0'
 dependencies:
     'actions/checkout@v7.0.1':
